@@ -171,3 +171,5 @@ C:\Users\UserGPC\source\repos\TO-DO-LIST\TO-DO-LIST\obj\Debug\net8.0\refint\TO-D
 C:\Users\UserGPC\source\repos\TO-DO-LIST\TO-DO-LIST\obj\Debug\net8.0\TO-DO-LIST.pdb
 C:\Users\UserGPC\source\repos\TO-DO-LIST\TO-DO-LIST\obj\Debug\net8.0\TO-DO-LIST.genruntimeconfig.cache
 C:\Users\UserGPC\source\repos\TO-DO-LIST\TO-DO-LIST\obj\Debug\net8.0\ref\TO-DO-LIST.dll
+C:\Users\UserGPC\source\repos\TO-DO-LIST\TO-DO-LIST\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\UserGPC\source\repos\TO-DO-LIST\TO-DO-LIST\bin\Debug\net8.0\Newtonsoft.Json.dll

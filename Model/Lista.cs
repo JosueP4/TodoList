@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
+
 namespace TO_DO_LIST.Model
 {
     public class Lista
@@ -12,7 +13,7 @@ namespace TO_DO_LIST.Model
         public string tarea { get; set; }
         public bool tareaC { get; set; }
        
-        
+        public DateTime FechaCreacion { get; set; }
 
 
     }

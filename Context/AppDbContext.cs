@@ -6,7 +6,9 @@ namespace TO_DO_LIST.Context
     public class AppDbContext : DbContext
     {
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
-    public DbSet<Lista> Listas { get; set; }
+        public DbSet<Lista> Listas { get; set; }
+
+        public DbSet<Usuario> Usuarios { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -20,7 +22,30 @@ namespace TO_DO_LIST.Context
                 tb.Property(col => col.tareaC).HasDefaultValue(false);
 
 
-                tb.ToTable("TO-DO-LIST");
+                tb.ToTable("Tareas");
+
+
+            });
+
+            modelBuilder.Entity<Usuario>(tb =>
+            {
+
+                tb.HasKey(col => col.IdUser);
+                tb.Property(col => col.IdUser).UseIdentityColumn().ValueGeneratedOnAdd();
+                tb.Property(col => col.User).HasMaxLength(40).IsRequired();
+                tb.Property(col => col.Password).HasMaxLength(25).IsRequired();
+                tb.Property(col => col.rol).HasMaxLength(20).IsRequired();
+
+
+
+
+                tb.ToTable("Usuarios");
+                tb.HasData(
+                    new Usuario { IdUser = -1, User = "josue", Password = "josue1020", rol = "admin" },
+                    new Usuario { IdUser = -2, User = "Ariel", Password = "ariel1020", rol = "empleado" }
+
+
+                );
 
 
             });
@@ -31,5 +56,5 @@ namespace TO_DO_LIST.Context
 
 
 
-    
+
 }

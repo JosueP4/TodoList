@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using TO_DO_LIST.Context;
@@ -6,6 +7,7 @@ using TO_DO_LIST.Model;
 
 namespace TO_DO_LIST.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class ToDoListController : ControllerBase
@@ -15,7 +17,7 @@ namespace TO_DO_LIST.Controllers
         {
             _context = context;
         }
-
+        [Authorize]
         [HttpGet]
         [Route("Lista")]
 
@@ -26,7 +28,7 @@ namespace TO_DO_LIST.Controllers
             return Ok(listas);
         }
 
-
+        [Authorize]
         [HttpGet]
         [Route("Buscar/{id}")]
         
@@ -41,6 +43,7 @@ namespace TO_DO_LIST.Controllers
 
             return Ok(lista);
         }
+        [Authorize]
         [HttpPost]
         [Route("Crear")]
         public async Task<ActionResult<List<Lista>>> Crear(Lista lista)
@@ -50,7 +53,7 @@ namespace TO_DO_LIST.Controllers
             await _context.SaveChangesAsync();
             return Ok(lista);
         }
-
+        [Authorize]
         [HttpPut]
         [Route("Editar/{id}")]
 
@@ -65,7 +68,7 @@ namespace TO_DO_LIST.Controllers
             await _context.SaveChangesAsync();  
             return Ok();
         }
-
+        [Authorize]
         [HttpDelete]
         [Route("Elimnar/{id}")]
 
@@ -80,7 +83,7 @@ namespace TO_DO_LIST.Controllers
             await _context.SaveChangesAsync();
             return Ok(lista);
         }
-
+        [Authorize]
         [HttpGet]
         [Route("Pendientes")]
 
@@ -93,7 +96,7 @@ namespace TO_DO_LIST.Controllers
             }
             return Ok(lista);
         }
-
+        [Authorize]
         [HttpGet]
         [Route("Completado")]
 

@@ -1,5 +1,21 @@
 [
   {
+    "ContainingType": "TO_DO_LIST.Controllers.LoginController",
+    "Method": "Login",
+    "RelativePath": "api/Login/Autenticacion",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "usuario",
+        "Type": "TO_DO_LIST.Model.Usuario",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "TO_DO_LIST.Controllers.ToDoListController",
     "Method": "Buscar",
     "RelativePath": "api/ToDoList/Buscar/{id}",
